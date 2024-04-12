@@ -165,7 +165,7 @@ def by(aa,bz,bt,ba,bb,ca,cb):
   clear_bq = ((aa[2]%127)<<3)+((aa[3]%224)>>5)
   if clear_bq!=0:cc+=cd[bqcw-1]*100
   else:cc+=cd[bqcw+2]*100
-  if ce==True and bqcw==4:cc+=1200
+  if ce and bqcw==4:cc+=1200
   ca=(bqcw==4);cb=False
  if bm>=1:cc+=50*bm
  if bl>1:cc*=min(bl,20)
@@ -189,7 +189,7 @@ def cg(aa,cm,X,Y):
 def ch(aa, ci, j, ai, X, Y, cj, ck):
  ai_=(ai+ci)%4;cm=am(j,ai_)
  cl=cf(aa,cm,X,Y)
- if cl==True:
+ if cl:
   if j==0:test_mov=ak
   else:test_mov=aj
   if ci==1:rot_index=0
@@ -229,7 +229,7 @@ while True:
     bd=True;bh=' '*9+'GAME OVER / CONTINUE?(Y/N)'
     bf=ay(j,ai)
     cq=cg(aa,cm,X,Y);br(aa);continue
-   if j==5 and cj==True:
+   if j==5 and cj:
     bz=ab(aa,X,Y,ai)
     if bz:bh=' '*19+'-T*SPIN-';ba+=400*min(bl,1)
    else:bz=False
@@ -266,7 +266,7 @@ while True:
    cm=am(j,ai)
   bf=ay(j,ai);cq=cg(aa,cm,X,Y);br(aa)
  if co!=None:
-  if bd==True:
+  if bd:
    if co.lower()=='y':
     bh = '';aa=[255,240]+[128,16]*24
     bg_empty=True;be_enable=False;be=' '*32
@@ -282,7 +282,7 @@ while True:
    termios.tcsetattr(sys.stdin,termios.TCSADRAIN,old_settings);exit()
   if co.lower()=='p':
    bc=not bc
-   if bc==True:bh=' '*19+'-PAUSE-'
+   if bc:bh=' '*19+'-PAUSE-'
    else:bh=''
    bf=ay(j,ai);br(aa)
    continue
@@ -300,7 +300,7 @@ while True:
      cq = cg(aa,cm,X,Y);br(aa)
      continue
     if co.lower()=='z':
-     if bg_empty==True:
+     if bg_empty:
       az(aa,ai);bg_empty=False;bg=j
       Y=21;X=3;ai=0;cr=40
       if len(at)>7:j=at.pop(0);aw=au(at)
@@ -310,7 +310,7 @@ while True:
       bf=ay(j,ai);br(aa)
       continue
      else:
-      if be_enable==True and bg!=j:
+      if be_enable and bg!=j:
        az(aa,ai);be_enable=False
        bg,j=j,bg;Y=21;X=3;ai=0;cr=40
        cm=am(j,ai)
