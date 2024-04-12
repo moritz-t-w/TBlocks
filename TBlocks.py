@@ -266,8 +266,9 @@ while True:
    cm=am(j,ai)
   bf=ay(j,ai);cq=cg(aa,cm,X,Y);br(aa)
  if co!=None:
+  cx=co.lower()
   if bd:
-   if co.lower()=='y':
+   if cx=='y':
     bh = '';aa=[255,240]+[128,16]*24
     bg_empty=True;be_enable=False;be=' '*32
     X=3; Y=21;ai=0;cl=0;j=0;cr=0;tau=50;bl=0;bm=-1
@@ -276,30 +277,30 @@ while True:
     aw = au(at);cm=am(j,ai)
     bf=ay(j,ai);br(aa)
     continue
-   if co.lower()=='n':
+   if cx=='n':
     termios.tcsetattr(sys.stdin, termios.TCSADRAIN, old_settings);exit()
-  if co.lower()=='q':
+  if cx=='q':
    termios.tcsetattr(sys.stdin,termios.TCSADRAIN,old_settings);exit()
-  if co.lower()=='p':
+  if cx=='p':
    bc=not bc
    if bc:bh=' '*19+'-PAUSE-'
    else:bh=''
    bf=ay(j,ai);br(aa)
    continue
   if bc==False and bd==False:
-    if co.lower()=='a':
+    if cx=='a':
      ci=-1
      cm,ai,X,Y,cj,ck=ch(aa,ci,j,ai,X,Y,cj,ck)
      bf=ay(j, ai)
      cq=cg(aa,cm,X,Y);br(aa)
      continue
-    if co.lower()=='s':
+    if cx=='s':
      ci=1
      cm,ai,X,Y,cj,ck=ch(aa,ci,j,ai,X,Y,cj,ck)
      bf=ay(j,ai)
      cq = cg(aa,cm,X,Y);br(aa)
      continue
-    if co.lower()=='z':
+    if cx=='z':
      if bg_empty:
       az(aa,ai);bg_empty=False;bg=j
       Y=21;X=3;ai=0;cr=40
@@ -316,7 +317,7 @@ while True:
        cm=am(j,ai)
        be=ax(bg)+be[len(ax(bg)):]
        bf=ay(j,ai);br(aa)
-    if co.lower()=='j':
+    if cx=='j':
      if X<=10:
       X+=1;cl=cf(aa,cm,X,Y)
       if cl!=0:X-=1
@@ -325,7 +326,7 @@ while True:
        bf=ay(j,ai)
        cq=cg(aa,cm,X,Y);br(aa)
        continue
-    if co.lower()=='l':
+    if cx=='l':
      X-=1;cl=cf(aa,cm,X,Y)
      if cl!=0:X+=1
      else:
@@ -333,7 +334,7 @@ while True:
       bf=ay(j,ai)
       cq=cg(aa,cm,X,Y);br(aa)
       continue
-    if co.lower()=='k' and already_soft==False:
+    if cx=='k' and already_soft==False:
      Y-=1;cl = cf(aa,cm,X,Y)
      if cl!=0:
       already_soft=True;Y+=1;cr=15;cv=time.time()
@@ -341,7 +342,7 @@ while True:
      else:
       ba+=min(bl,1);cj=False;ck=False
       bf=ay(j,ai);br(aa)
-    if co.lower()=='m':
+    if cx=='m':
      ba+=2*(Y-cq-2)*min(bl,1);Y=cq+2;cp=True;cr=tau
      bf=ay(j,ai);br(aa);cv=time.time()
      while (time.time()-cv)<0.1:cu=al()
