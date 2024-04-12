@@ -184,7 +184,7 @@ def cf(aa,cm,X,Y):
  return cn
 def cg(aa,cm,X,Y):
  cl=False;i=0
- while cl==False:i+=1;cl=cf(aa,cm,X,Y-i)
+ while not cl:i+=1;cl=cf(aa,cm,X,Y-i)
  return Y-i-1
 def ch(aa, ci, j, ai, X, Y, cj, ck):
  ai_=(ai+ci)%4;cm=am(j,ai_)
@@ -198,7 +198,7 @@ def ch(aa, ci, j, ai, X, Y, cj, ck):
    X_t=X-test_mov[ai][rot_index][i][0]
    Y_t=Y+test_mov[ai][rot_index][i][1]
    cl=cf(aa,cm,X_t,Y_t)
-   if cl==False:
+   if not cl:
     cj=True;ck=True
     return cm,ai_,X_t,Y_t,cj,ck
  else:
@@ -218,9 +218,9 @@ cm=am(j,ai);bf=ay(j, ai)
 cq=cg(aa,cm,X,Y);br(aa)
 while True:
  co=al()
- if cp==False:time.sleep(0.005)
+ if not cp:time.sleep(0.005)
  cp=False
- if bc==False and bd==False:cr+=0.4
+ if not bc and not bd:cr+=0.4
  if int(cr)>=tau:
   cr=0;Y-=1;cl=cf(aa,cm,X,Y);already_soft=False
   if cl!=0:
@@ -238,7 +238,7 @@ while True:
     bm+=1;ce=False
     if ca or cb:ce=True
     ct=len(cs)
-    if bz==False:
+    if not bz:
      bh=' '*18
      if ct==1:bh+='  -LINE-'
      elif ct==2:bh+=' -DOUBLE-'
@@ -259,7 +259,7 @@ while True:
    else:
     bm=-1
     if bz and ck:cb=True
-    if bz==False:bh=''
+    if not bz:bh=''
    Y=21;X=3;ai=0;cr=40;be_enable=True
    if len(at)>7:j=at.pop(0);aw=au(at)
    else:at=cw(at);j=at.pop(0);aw=au(at)
@@ -287,7 +287,7 @@ while True:
    else:bh=''
    bf=ay(j,ai);br(aa)
    continue
-  if bc==False and bd==False:
+  if not bc and not bd:
    match cx:
     case'a':
      ci=-1
