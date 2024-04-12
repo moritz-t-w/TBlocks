@@ -288,19 +288,20 @@ while True:
    bf=ay(j,ai);br(aa)
    continue
   if bc==False and bd==False:
-    if cx=='a':
+   match cx:
+    case'a':
      ci=-1
      cm,ai,X,Y,cj,ck=ch(aa,ci,j,ai,X,Y,cj,ck)
      bf=ay(j, ai)
      cq=cg(aa,cm,X,Y);br(aa)
      continue
-    if cx=='s':
+    case's':
      ci=1
      cm,ai,X,Y,cj,ck=ch(aa,ci,j,ai,X,Y,cj,ck)
      bf=ay(j,ai)
      cq = cg(aa,cm,X,Y);br(aa)
      continue
-    if cx=='z':
+    case'z':
      if bg_empty:
       az(aa,ai);bg_empty=False;bg=j
       Y=21;X=3;ai=0;cr=40
@@ -317,7 +318,7 @@ while True:
        cm=am(j,ai)
        be=ax(bg)+be[len(ax(bg)):]
        bf=ay(j,ai);br(aa)
-    if cx=='j':
+    case'j':
      if X<=10:
       X+=1;cl=cf(aa,cm,X,Y)
       if cl!=0:X-=1
@@ -326,7 +327,7 @@ while True:
        bf=ay(j,ai)
        cq=cg(aa,cm,X,Y);br(aa)
        continue
-    if cx=='l':
+    case'l':
      X-=1;cl=cf(aa,cm,X,Y)
      if cl!=0:X+=1
      else:
@@ -334,7 +335,8 @@ while True:
       bf=ay(j,ai)
       cq=cg(aa,cm,X,Y);br(aa)
       continue
-    if cx=='k' and already_soft==False:
+    case'k':
+     if already_soft: continue
      Y-=1;cl = cf(aa,cm,X,Y)
      if cl!=0:
       already_soft=True;Y+=1;cr=15;cv=time.time()
@@ -342,7 +344,7 @@ while True:
      else:
       ba+=min(bl,1);cj=False;ck=False
       bf=ay(j,ai);br(aa)
-    if cx=='m':
+    case'm':
      ba+=2*(Y-cq-2)*min(bl,1);Y=cq+2;cp=True;cr=tau
      bf=ay(j,ai);br(aa);cv=time.time()
      while (time.time()-cv)<0.1:cu=al()
